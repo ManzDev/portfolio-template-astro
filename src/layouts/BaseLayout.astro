@@ -1,0 +1,35 @@
+---
+import HeroBanner from "@/components/HeroBanner.astro";
+import { ViewTransitions } from 'astro:transitions';
+import NavBar from "@/components/NavBar.astro";
+const { title, description } = Astro.props;
+---
+<style is:global>
+  :root {
+    --theme-color-lightest: #F2E1D8;
+    --theme-color-light: #F29057;
+    --theme-color-medium: #D9734E;
+    --theme-color-dark: #404959;
+    --theme-color-darkest: #000;
+  }
+  body {
+    margin: 0;
+  }
+</style>
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <ViewTransitions />
+		<title>{title}</title>
+	</head>
+	<body>
+    <NavBar />
+    <HeroBanner character="avocat.png" />
+		<slot></slot>
+	</body>
+</html>

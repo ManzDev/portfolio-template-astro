@@ -1,0 +1,54 @@
+---
+import "@fontsource-variable/playfair-display";
+
+const ROUTES = [
+  { text: "Inicio", url: "/" },
+  { text: "Servicios", url: "/services/" },
+  { text: "Portfolio", url: "/portfolio/" },
+  { text: "Streamers", url: "/streamers/" },
+  { text: "FAQ", url: "/faq/" }
+]
+---
+<style>
+  nav {
+    font-family: "Playfair Display Variable", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: #19181c;
+    background-image: linear-gradient(#19181c, #111);
+    box-shadow: 0 -5px 0 #000 inset;
+    display: flex;
+    justify-content: center;
+
+    & .wrapper {
+      display: flex;
+    }
+
+    & a {
+      display: block;
+      color: #fff;
+      padding: 1rem 3rem;
+      text-decoration: none;
+      border-bottom: 10px solid var(--bgcolor);
+      transition:
+        background 0.25s,
+        color 0.25s;
+
+        &:nth-child(1) { --bgcolor: #F08F4A; }
+      &:nth-child(2) { --bgcolor: #D9734E; }
+      &:nth-child(3) { --bgcolor: #F05E4A; }
+      &:nth-child(4) { --bgcolor: #E64755; }
+      &:nth-child(5) { --bgcolor: #c52b38; }
+
+      &:hover {
+        background: color-mix(in srgb, var(--bgcolor), #000 30%);
+      }
+    }
+  }
+</style>
+
+<nav>
+  <div class="wrapper">
+    {ROUTES.map(route => <a href={route.url}>{route.text}</a>)}
+  </div>
+</nav>
