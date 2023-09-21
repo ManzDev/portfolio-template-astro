@@ -1,0 +1,71 @@
+---
+const { username, name, color } = Astro.props;
+const image = "images/" + username + "-profile.png";
+---
+
+<style>
+  .testimonial {
+    --size: 300px;
+    --image-cell: calc(var(--size) + 10px);
+
+    display: grid;
+    grid-template-columns: var(--image-cell) 1fr;
+    align-items: center;
+
+    @media (width <= 950px) {
+      grid-template-columns: 1fr;
+      place-items: center;
+
+      & .balloon-container::before { content: none; }
+      & .avatar { transform: translateY(42px); }
+    }
+  }
+
+  h3 {
+    font-family: Jost;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-shadow: 0 0 5px #0005;
+    font-size: 1.4rem;
+    margin: 0;
+    text-align: right;
+    padding-right: 2rem;
+  }
+
+  .balloon-container {
+    font-family: Jost;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    background: white;
+    margin: 1rem;
+    line-height: 125%;
+
+    &::before {
+      content: "";
+      display: block;
+      background: white;
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      width: 75px;
+      height: 75px;
+      position: absolute;
+      transform: translate(-100px, 65px);
+    }
+  }
+
+  .avatar {
+    width: var(--size);
+    filter: drop-shadow(0 0 5px #000c);
+    clip-path: circle(50%);
+    background: var(--bgcolor);
+  }
+</style>
+
+<div class="testimonial" style={"--bgcolor:" + color}>
+  <img class="avatar" src={image} alt={name}>
+  <div class="end-container">
+    <div class="balloon-container">
+      <slot></slot>
+    </div>
+    <h3>{name}</h3>
+  </div>
+</div>

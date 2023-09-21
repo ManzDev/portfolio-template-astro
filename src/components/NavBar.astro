@@ -1,17 +1,9 @@
 ---
-import "@fontsource-variable/playfair-display";
-
-const ROUTES = [
-  { text: "Inicio", url: "/" },
-  { text: "Servicios", url: "/services/" },
-  { text: "Portfolio", url: "/portfolio/" },
-  { text: "Streamers", url: "/streamers/" },
-  { text: "FAQ", url: "/faq/" }
-]
+import ROUTES from "@/assets/routes.json";
 ---
 <style>
   nav {
-    font-family: "Playfair Display Variable", sans-serif;
+    font-family: var(--serif-font);
     font-size: 1.5rem;
     font-weight: 600;
     background-color: #19181c;
@@ -24,6 +16,15 @@ const ROUTES = [
       display: flex;
     }
 
+    @media (width <= 700px) {
+      & .wrapper {
+        flex-direction: column;
+        align-items: center;
+
+        & a { width: 100%; text-align: center; }
+      }
+    }
+
     & a {
       display: block;
       color: #fff;
@@ -34,7 +35,7 @@ const ROUTES = [
         background 0.25s,
         color 0.25s;
 
-        &:nth-child(1) { --bgcolor: #F08F4A; }
+      &:nth-child(1) { --bgcolor: #F08F4A; }
       &:nth-child(2) { --bgcolor: #D9734E; }
       &:nth-child(3) { --bgcolor: #F05E4A; }
       &:nth-child(4) { --bgcolor: #E64755; }

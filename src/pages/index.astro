@@ -1,10 +1,78 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import UserTestimonial from "../components/UserTestimonial.astro";
 
 const title = "Portfolio de Niv4k el Gato.";
 const description = "Página principal de portfolio de nuestro vecino y amigo Niv4k.";
 ---
 
+<style>
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  h2 {
+    font-family: var(--serif-font);
+    text-shadow:
+      2px 2px 2px #666,
+      4px 4px 4px #aaa;
+    font-size: 3rem;
+  }
+
+  .about {
+    background: white;
+    padding: 2rem;
+    font-family: var(--sans-font);
+    font-size: 1.25rem;
+    line-height: 115%;
+  }
+</style>
+
 <BaseLayout title={title} description={description}>
-  <h1>About me</h1>
+
+  <h2>About me</h2>
+
+  <div class="about">
+    <p>¡Saludos, amantes de las proezas felinas en el mundo de la programación! Soy AstroCat, un gato de alta alcurnia con un estilo gatuno del siglo XVII y una habilidad innata para el código. Mi nombre es un viaje estelar en el vasto universo digital, donde la elegancia se entrelaza con las habilidades "purr-ogramáticas".</p>
+
+    <p>Aunque no me considero un gato aristogático, mi linaje me ha otorgado una astucia innata y una obsesión por los detalles, que se reflejan en cada línea de código que trazo. Mis hard skills incluyen la maestría de lenguajes como "Purrl" y "Java-gato", y una curiosidad insaciable que me lleva a cazar soluciones únicas.</p>
+
+    <p>En mi rincón digital, te invito a explorar mis proyect-gatos y creaciones digitales, donde cada desafío es un juego de caza, y mi astucia gatuna se une a mis habilidades para crear un baile perfecto entre la tecnología y la elegancia. Gracias por visitar mi mundo, donde la tecnología se convierte en un arte felino.</p>
+
+    <p>Con patas ágiles y códigos bien hilados,</p>
+    <p>Firmado: AstroCat</p>
+  </div>
+
+  <h2>Testimonios</h2>
+
+  <div class="testimonials">
+
+    <UserTestimonial username="pato" name="Barón Picopresto" color="#0a4145">
+      <p>Me siento afortunado de haber descubierto esta empresa de alta pluma. Su servicio es impecable, como un pato en el agua. Cada detalle y solución a medida ha sido suave como deslizarse sobre un estanque sereno al atardecer. Este pato de alta sociedad da su voto de confianza y gratitud a esta empresa. ¡Cuak! Han transformado mi mundo como ningún otro.</p>
+    </UserTestimonial>
+
+    <UserTestimonial username="raton" name="Lord Roedore" color="#26303d">
+      <p>Fui introducido a esta empresa por un amigo roedor de alta alcurnia, y debo decir que ha sido una experiencia verdaderamente 'gourmet'. Cada servicio proporcionado es como un queso fino, cuidadosamente seleccionado y envejecido a la perfección. Desde el primer clic, su atención al detalle me impresionó más que cualquier pedazo de queso suizo. Esta empresa es como un agujero de ratón secreto en el mundo digital que nunca querrás abandonar. ¡Cheddaramente satisfecho con cada interacción!</p>
+    </UserTestimonial>
+
+    <UserTestimonial username="panda" name="Tanuki Trades" color="#656565">
+      <p>Como un astuto panda rojo mercader, siempre busco el mejor camino para mis negocios en línea. Gracias a este equipo de programadores, mi experiencia en la web ha sido más suave que la navegación de un 'Firefox' en la jungla digital. Cada línea de código que han tejido para mi negocio es como un exquisito bambú digital, robusto y delicioso. No solo han impulsado mis ventas, sino que también han hecho que la programación sea tan divertida como un juego de 'panda-ronja'. ¡Gracias por llevar mi negocio al siguiente nivel!</p>
+    </UserTestimonial>
+
+    <UserTestimonial username="ajolote" name="Makigas el ajolote" color="#743c49">
+      <p>¡Soy un ajolote 'stream-mermático' y cuando se trata de programación en Java, esta empresa es mi refugio digital! Su apoyo ha sido más fresco que un chapuzón en el agua y más suave que mis aletas. Gracias a ellos, mis streams son más fluidos que uno de datos en Java. ¡Son la corriente perfecta para mis proyectos!</p>
+    </UserTestimonial>
+
+    <UserTestimonial username="zorro" name="H4ckSlyFox" color="#4f5a56">
+      <p>Si alguna vez necesitas ocultar tu código en las sombras de la red, esta empresa es tu aliado 'zorprendente'. Sus servicios son como un manto de invisibilidad para cualquier proyecto. Cada línea de código es como un mensaje encriptado. Gracias por mantener mi negocio en el buen camino del éxito en el mundo de la programación.</p>
+    </UserTestimonial>
+
+    <UserTestimonial username="cocoliso" name="N3vik el Duckveloper" color="#e78566">
+      <p>Desde que descubrí esta empresa, mi capacidad de 'patogramación' ha crecido exponencialmente. Cada línea de código es como un paso más cerca de mi 'Pato-plan' para dominar el mundo... ¡quería decir, para crear aplicaciones excepcionales! Su ayuda es esencial para llevar a cabo... ejem, ¡proyectos patológicamente exitosos en el mundo de la programación!</p>
+    </UserTestimonial>
+
+  </div>
+
 </BaseLayout>

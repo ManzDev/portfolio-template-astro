@@ -1,7 +1,10 @@
 ---
+import "@fontsource-variable/playfair-display";
+import "@fontsource-variable/jost";
 import HeroBanner from "@/components/HeroBanner.astro";
-import { ViewTransitions } from 'astro:transitions';
 import NavBar from "@/components/NavBar.astro";
+import FooterBlock from "@/components/FooterBlock.astro";
+import { ViewTransitions } from 'astro:transitions';
 const { title, description } = Astro.props;
 ---
 <style is:global>
@@ -11,9 +14,31 @@ const { title, description } = Astro.props;
     --theme-color-medium: #D9734E;
     --theme-color-dark: #404959;
     --theme-color-darkest: #000;
+
+    --theme-warm-color-light: #ffceb5;
+    --theme-cold-color-light: #98aed4;
+
+    --serif-font: "Playfair Display Variable", serif;
+    --sans-font: Jost, sans-serif;
   }
+
+  html, body {
+    height: 100%;
+  }
+
   body {
     margin: 0;
+    background-color: var(--theme-warm-color-light);
+  }
+
+  .content {
+    padding: 1rem 3rem;
+    max-width: 1024px;
+    margin: auto;
+  }
+
+  .svg-sprite {
+    display: none;
   }
 </style>
 
@@ -28,8 +53,13 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-    <NavBar />
-    <HeroBanner character="avocat.png" />
-		<slot></slot>
+    <div class="page">
+      <NavBar />
+      <HeroBanner character="avocat.png" />
+      <main class="content">
+        <slot></slot>
+      </main>
+      <FooterBlock></FooterBlock>
+    </div>
 	</body>
 </html>

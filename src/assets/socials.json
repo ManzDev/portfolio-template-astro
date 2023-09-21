@@ -1,0 +1,10 @@
+[
+  { "text": "ManzDev", "url": "https://twitch.tv/ManzDev/", "type": "twitch" },
+  { "text": "@ManzDev", "url": "https://youtube.com/@ManzDev/", "type": "youtube" },
+  { "text": "Manz", "url": "https://twitter.com/Manz/", "type": "twitter" },
+  { "text": "@manz.dev", "url": "https://tiktok.com/@manz.dev/", "type": "tiktok" },
+  { "text": "@manz.dev", "url": "https://instagram.com/@manz.dev/", "type": "instagram" },
+  { "text": "joseromanhdez", "url": "https://linkedin.com/in/joseromanhdez/", "type": "linkedin" },
+  { "text": "Manz.dev", "url": "https://discord.manz.dev/", "type": "discord" },
+  { "text": "ManzDev", "url": "https://github.com/ManzDev", "type": "github" }
+]

@@ -1,0 +1,49 @@
+---
+import SOCIALS from "@/assets/socials.json";
+import SocialLink from "@/components/SocialLink.astro";
+
+const author = "ManzDev";
+---
+<style>
+  footer {
+    background: var(--theme-color-darkest);
+    min-height: 100px;
+  }
+
+  .text {
+    padding-top: 1rem;
+    max-width: 600px;
+    margin: auto;
+
+    & p {
+      font-family: var(--sans-font);
+      font-size: 1.3rem;
+      color: #ccc;
+      text-align: center;
+      margin: 1rem;
+    }
+
+    .heart {
+      color: red;
+    }
+  }
+
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+  }
+</style>
+
+<footer>
+  <div class="text">
+    <p>
+      Creado por {author}, alojado en tu <span class="heart">❤</span><br>
+      Plantilla creada con Astro
+    </p>
+  </div>
+  <div class="socials">
+    {SOCIALS.map(social => <SocialLink social={social}></SocialLink>)}
+  </div>
+</footer>
